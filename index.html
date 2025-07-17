@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Meas Converter</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/2eb5dd00c7.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo-container">
+      <div class="logo-m"><img src="logo.png" width="80"></div>
+      <h5 class="mb-0 text-white ms-2 logo-text"></h5>
+    </div>
+    <nav class="nav flex-column" id="converterMenu">
+      <a class="nav-link d-flex align-items-center gap-2" data-type="angle" href="#" title="Convert degrees, radians, grads">
+        <i class="fa-solid fa-compass-drafting"></i><span>Angle</span></a>
+      <a class="nav-link d-flex align-items-center gap-2" data-type="area" href="#" title="Convert square meters, feet, km², etc.">
+        <i class="fa-regular fa-object-group"></i><span>Area</span></a>
+      <a class="nav-link d-flex align-items-center gap-2" data-type="data" href="#" title="Convert bits, bytes, KB, MB, GB">
+        <i class="fa-solid fa-database"></i><span>Data</span></a>
+      <a class="nav-link d-flex align-items-center gap-2" data-type="energy" href="#" title="Convert joules, calories, kilowatt-hours, etc.">
+        <i class="fa-solid fa-bolt"></i><span>Energy</span></a>
+      <a class="nav-link d-flex align-items-center gap-2" data-type="length" href="#" title="Convert meters, feet, inches, etc.">
+        <i class="fa-solid fa-ruler-horizontal"></i><span>Length</span></a>
+      <a class="nav-link d-flex align-items-center gap-2" data-type="pressure" href="#" title="Convert pascal, bar, psi, atmosphere, etc.">
+        <i class="fa-solid fa-gauge-high"></i><span>Pressure</span></a>
+      <a class="nav-link d-flex align-items-center gap-2" data-type="speed" href="#" title="Convert km/h, m/s, mph, etc.">
+        <i class="fa-solid fa-gauge"></i><span>Speed</span></a>
+      <a class="nav-link d-flex align-items-center gap-2" data-type="temperature" href="#" title="Convert Celsius, Fahrenheit, Kelvin">
+        <i class="fa-solid fa-temperature-half"></i><span>Temperature</span></a>
+      <a class="nav-link d-flex align-items-center gap-2" data-type="volume" href="#" title="Convert liters, milliliters, cups, etc.">
+        <i class="fa-solid fa-glass-water"></i><span>Volume</span></a>
+      <a class="nav-link d-flex align-items-center gap-2" data-type="weight" href="#" title="Convert kilograms, grams, pounds, etc.">
+        <i class="fa-solid fa-weight-hanging"></i><span>Weight</span></a>
+    </nav>
+  </div>
+
+  <div class="content">
+    <div id="introMessage" class="text-center">
+      <img src="logo.png" width="80" style="color:#355E8C">
+      <h3>Measurement Converter</h3>
+      <p class="mb-0">Select a conversion type from the menu to get started</p>
+    </div>
+    
+    <div id="converterForm" class="fade-in" style="display:none;">
+      <div class="converter-card">
+        <h3 class="converter-title" id="converterTitle">Length Converter</h3>
+        
+        <label class="input-label">Enter Value</label>
+        <input type="number" id="inputValue" class="input-value" placeholder="e.g. 10">
+        
+        <div class="units-container">
+          <div class="unit-selector">
+            <label>From</label>
+            <select id="fromUnit" class="form-select"></select>
+          </div>
+          
+          <div class="unit-selector">
+            <label>To</label>
+            <select id="toUnit" class="form-select"></select>
+          </div>
+        </div>
+        
+        <button class="btn btn-convert pulse" id="convertBtn">Convert</button>
+        
+        <div id="resultArea"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js.js">
+    
+  </script>
+</body>
+</html>
